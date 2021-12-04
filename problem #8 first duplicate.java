@@ -22,28 +22,39 @@ public class Main
 	    
 	   ArrayList<Integer> arr = new ArrayList<>();
 	   arr.add(1);
-	   arr.add(1);
+	   
 	   arr.add(0);
 	   
 	   arr.add(2);
+	   arr.add(1);
 	   arr.add(4);
 	   arr.add(5);
 	   
+	   int returnx = index_of_first_duplicate(arr);
 	   
-	   for(int i = 0; i < arr.size(); i++){
-	       for(int j = i+1; j < arr.size(); j++){
+        System.out.println("output "+ returnx);
+      
+	}
+	
+	static int index_of_first_duplicate(ArrayList<Integer> arr){
+	    
+	    int output=0;
+	    for(int i = 0; i < arr.size(); i++){
+	       for( int j= i+1; j < arr.size(); j++){
 	           
 	           if(arr.get(i) == arr.get(j)){
-	               System.out.println((arr.get(i) +" == "+ arr.get(j)));
-	                System.out.println("Array size is "+ arr.size());
-	               System.out.println("First duplicate after internal looping "+ (j+1) + " and outer looping "+ (i+1));
+	               //System.out.println((arr.get(i) +" == "+ arr.get(j)));
+	               // System.out.println("Array size is "+ arr.size());
+	               //System.out.println("First duplicate after internal looping "+ (j+1) + " and outer looping "+ (i+1));
+	               output = j;
 	               break;
 	           }
 	           
 	       }
 	   }
-
-      
+	   
+	   return output;
+	    
 	}
 	
     
